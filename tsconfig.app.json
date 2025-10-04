@@ -3,15 +3,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
+
     "jsx": "react-jsx",
     "lib": ["ESNext", "DOM"],
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+
+    // الإضافات المهمة عشان مشكلة react-typed
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+
+    // مفيد مع Vite
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true
   },
   "include": ["src"]
 }
