@@ -6,11 +6,11 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useRef, useState } from "react";
 
 export const Navbar = () => {
-    const { order, setOrder } = getThemes()
+    const { order, setOrder } = getThemes()!
     const Ref = useRef<HTMLDivElement>(null);
 
     /* getHeigh From Custom Hook */
-    const h: number = GetHeight(Ref)
+    const h: number = GetHeight(Ref as React.RefObject<HTMLElement>)
 
     /* States */
     const [open, setOpen] = useState<boolean>(false)
@@ -42,7 +42,7 @@ export const Navbar = () => {
                         }
                     </nav>
                     {/* menu in small Screen */}
-                    <nav className={`md:hidden absolute top-[103%] w-full p-2 left-0  shadow rounded-md ${order?'bg-gray-950':'bg-white'}`} ref={Ref} style={{
+                    <nav className={`md:hidden absolute top-[103%] w-full p-2 left-0  shadow rounded-md ${order ? 'bg-gray-950' : 'bg-white'}`} ref={Ref} style={{
                         height: ` ${open ? h : 0}px`,
                         opacity: `${open ? 1 : 0}`,
                         overflow: "hidden",

@@ -1,7 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 
-const Mode = createContext(null);
-export const Themes = ({ children }) => {
+
+interface ModeContextType {
+    order: boolean;
+    setOrder: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Mode = createContext<ModeContextType | null>(null);
+
+type childType = {
+    children: ReactNode
+}
+export const Themes = ({ children }: childType) => {
     const [order, setOrder] = useState<boolean>(false)
     return <Mode.Provider value={{ order, setOrder }}>
         {children}

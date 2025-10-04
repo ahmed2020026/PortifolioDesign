@@ -4,7 +4,7 @@ import { getThemes } from "@/context/Mode";
 import { ReactTyped } from "react-typed";
 
 export const HeroSection = () => {
-    const {order} = getThemes();
+    const {order} = getThemes()!;
     return (
         <>
             <section className={`flex justify-center items-center ${order ? "bg-gray-900" : 'bg-gray-50' } `}>
