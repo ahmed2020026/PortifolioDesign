@@ -46,7 +46,7 @@ export const Navbar = () => {
                         height: ` ${open ? h : 0}px`,
                         opacity: `${open ? 1 : 0}`,
                         overflow: "hidden",
-                        transition: "all 0.3s ease",
+                        transition: "height 0.25s ease, opacity 0.33s ease, background-color 150ms ease",
                     }}>
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
@@ -58,7 +58,7 @@ export const Navbar = () => {
                     </nav>
                 </div>
                 <div className="icons">
-                    <Button variant="ghost" className={`cursor-pointer md:hidden bg-transparent  ${order ? 'text-stone-400 hover:text-stone-200 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} aria-label="btn_menu" onClick={toggle}>
+                    <Button variant="ghost" className={`cursor-pointer md:hidden bg-transparent  ${order ? 'text-stone-200 hover:text-stone-200 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} aria-label="btn_menu" onClick={toggle}>
                         <Menu className={open ? 'hidden' : ''} />
                         <X className={!open ? 'hidden' : ''} />
                     </Button>

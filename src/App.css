@@ -112,7 +112,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 duration-100;
+    @apply border-border outline-ring/50 duration-150;
   }
   body {
     @apply bg-background text-foreground;
