@@ -11,8 +11,8 @@ export const App = () => {
         <>
             <header
                 className={`fixed top-0 left-0 w-full z-20 p-2 blur-defficult ${order?.order
-                    ? 'bg-gray-900/40 text-white'
-                    : 'bg-white/60 text-gray-900'
+                    ? 'text-white'
+                    : 'text-gray-900'
                     } `}>
                 <Navbar />
             </header>

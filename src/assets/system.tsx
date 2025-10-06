@@ -1,5 +1,14 @@
 import HeroImage from './images/Hero.jpg'
 import React_Project_1 from './images/react_project_1.png'
+import React_Project_2 from './images/react_project_2.webp'
+import React_Project_3 from './images/react_project_3.png'
+import React_Project_4 from './images/react_project_4.png'
+
+import Bien from './images/bien.png'
+import Res from './images/res.png'
+import Por from './images/por.png'
+import E_commerce from './images/e-commerce.png'
+
 import {
     FileCode,
     Palette,
@@ -65,31 +74,59 @@ export const Skills = [
 
 export const Projects = [
     {
+        title: "React Project",
+        image: React_Project_1,
+        tech: ["React"],
+        demo: "https://ahmed2020026.github.io/FirstProject/",
+        github: "/FirstProject",
+    },
+    {
+        title: "Estate Website",
+        image: React_Project_2,
+        tech: ["React", "TailwindCSS", "AOS" , "Material UI"],
+        demo: "https://ahmed2020026.github.io/Estate_project/",
+        github: "/Estate_project",
+    },
+    {
+        title: "e-commerce",
+        image: React_Project_3,
+        tech: ["React", "TailwindCSS", "Api" , "AOS" , "Material UI"],
+        demo: "https://ahmed2020026.github.io/e-commerce/",
+        github: "/e-commerce",
+    },
+    {
+        title: "DashBoard Website",
+        image: React_Project_4,
+        tech: ["React", "TailwindCSS", "Redux Toolkit" , "Material UI" , "Api"],
+        demo: "http://g-store-dashboard.vercel.app/",
+        github: "/Dashboard",
+    },
+    {
         title: "Portfolio Website",
-        image: React_Project_1,
-        tech: ["React", "Tailwind CSS", "TypeScript"],
-        github: '',
-        demo: "",
+        image: Por,
+        tech: ["HTML", "CSS", "JavaScript"],
+        demo: "https://ahmed2020026.github.io/portifolio/",
+        github: "/portifolio",
     },
     {
-        title: "Todo App",
-        image: React_Project_1,
-        tech: ["React", "Redux Toolkit", "CSS"],
-        github: "",
-        demo: "",
+        title: "e-commerce",
+        image: E_commerce,
+        tech: ["HTML", "CSS" , "JavaScript"],
+        demo: "https://ahmed2020026.github.io/raya_site/",
+        github: "/raya_site",
     },
     {
-        title: "Todo App",
-        image: React_Project_1,
-        tech: ["React", "Redux Toolkit", "CSS"],
-        github: "",
-        demo: "",
+        title: "Bein Sport",
+        image: Bien,
+        tech: ["HTML" , "CSS" , "JavaScript" , "BootStrap"],
+        demo: "https://ahmed2020026.github.io/Bein_Sport/",
+        github: "/Bein_Sport",
     },
     {
-        title: "Weather App",
-        image: React_Project_1,
-        tech: ["React", "API", "Bootstrap"],
-        github: "",
-        demo: "",
+        title: "Resturant",
+        image: Res,
+        tech: ["HTML" , "CSS" , "JavaScript" , "BootStrap"],
+        demo: "https://ahmed2020026.github.io/resturant/",
+        github: "/resturant",
     },
 ]

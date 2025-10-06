@@ -14,8 +14,8 @@ export const ProjectSection = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
                     {Projects.map((item, index) => (
-                        <div key={index} className="shadow-md rounded-md overflow-hidden">
-                            <img src={item.image} alt={item.title} className="w-full h-48 object-cover"/>
+                        <div key={index} className="shadow-md rounded-md relative">
+                            <img src={item.image} alt={item.title} className="w-full h-48" />
                             <div className="p-5 flex flex-col justify-start h-[200px] ">
                                 <div>
                                     <h3 className={`text-xl text-start font-semibold mb-2 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"} `}>
@@ -30,7 +30,7 @@ export const ProjectSection = () => {
                                     <a href={item.demo} target="_blank" className="flex items-center gap-1 text-blue-600 hover:underline">
                                         <ExternalLink size={18} /> Live Demo
                                     </a>
-                                    <a href={item.github} target="_blank" className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline">
+                                    <a href={`https://github.com/ahmed2020026${item.github}`} target="_blank" className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:underline">
                                         <Github size={18} /> github
                                     </a>
                                 </div>
