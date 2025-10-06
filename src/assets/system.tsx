@@ -68,8 +68,8 @@ export const Skills = [
 
     // --- Tools & Platforms ---
     { name: "Git", icon: <GitCommit className="text-red-500 mx-auto" /> },
-    { name: "GitHub", icon: <Github className="text-gray-700 dark:text-gray-100 mx-auto" /> },
-    { name: "Vercel", icon: <Cloud className="text-gray-800 dark:text-gray-200 mx-auto" /> },
+    { name: "GitHub", icon: <Github className="text-gray- mx-auto" /> },
+    { name: "Vercel", icon: <Cloud className="text-gray- mx-auto" /> },
 ];
 
 export const Projects = [
