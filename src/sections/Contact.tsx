@@ -88,21 +88,24 @@ export const ContactSection = () => {
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input type="text"
                                     placeholder="Your Name"
-                                    className={`w-full ${order
-                                        ? "bg-gray-900 text-white placeholder-gray-400"
-                                        : "bg-gray-50  text-gray-900 placeholder-gray-500"
+                                    style={{ transition: 'all 150ms' }}
+                                    className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
+                                        ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
+                                        : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                         }`} />
                                 <Input type="email"
                                     placeholder="Your Email"
-                                    className={`w-full ${order
-                                        ? "bg-gray-900 text-white placeholder-gray-400"
-                                        : "bg-gray-50 text-gray-900 placeholder-gray-500"
+                                    style={{ transition: 'all 150ms' }}
+                                    className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
+                                        ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
+                                        : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                         }`} />
                             </div>
 
                             <Textarea
                                 rows={5}
                                 placeholder="Your Message..."
+                                style={{ transition: 'all 150ms' }}
                                 className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
                                     ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
                                     : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
