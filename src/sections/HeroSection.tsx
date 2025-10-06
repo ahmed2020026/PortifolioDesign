@@ -14,7 +14,7 @@ export const HeroSection = () => {
 
                     {/* النصوص */}
                     <div className="text-center md:text-left order-2 md:order-1">
-                        <p className={`text-blue-500`}>Hello! I'm</p>
+                        <p className={`text-blue-600`}>Hello! I'm</p>
                         <h2 className={`text-2xl md:text-4xl font-[500] mb-5 ${order ? 'text-white' : 'text-black'}`}>
                             <ReactTyped
                                 strings={["Ahmed Samir", "Frontend Developer", "React Developer", "JavaScript Developer"]}
@@ -30,7 +30,7 @@ export const HeroSection = () => {
                         </p>
 
                         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
-                            <Button type="button" size="lg" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700" onClick={() => ScrollTo('projects')}>
+                            <Button type="button" size="lg" className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700" onClick={() => ScrollTo('projects')}>
                                 View My Work
                             </Button>
                             <Button type="button" size="lg" variant="outline" className="text-blue-600 border-blue-600 bg-transparent hover:bg-blue-600 hover:text-white cursor-pointer" onClick={() => ScrollTo('contact')}>

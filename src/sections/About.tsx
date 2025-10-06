@@ -13,13 +13,13 @@ export const About = () => {
                 <div className={`text-base md:text-lg leading-relaxed tracking-wide opacity-80 ${order ? "text-gray-300" : "text-gray-700"}`}>
                     <p className="mb-4">
                         Hi! I’m <span className="font-semibold">Ahmed Samir</span>, a passionate{" "}
-                        <span className="text-blue-500 font-medium">Front-End Developer</span> who loves creating
+                        <span className="text-blue-700 font-medium">Front-End Developer</span> who loves creating
                         modern, responsive, and user-friendly web interfaces.
                     </p>
 
                     <p className="mb-4">
                         I focus on writing <span className="font-medium">clean code</span>, ensuring{" "}
-                        <span className="text-blue-500 font-medium">high performance</span>, and following{" "}
+                        <span className="text-blue-700 font-medium">high performance</span>, and following{" "}
                         <span className="font-medium">best practices</span> to deliver a perfect UI experience.
                     </p>
 
@@ -36,7 +36,7 @@ export const About = () => {
                         experiences that make a difference.
                     </p>
                 </div>
-                <Button size="lg" aria-label="Download Ahmed Samir CV in PDF format" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700 mt-10">
+                <Button size="lg" aria-label="Download Ahmed Samir CV in PDF format" className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700 mt-10">
                     Download CV
                 </Button>
             </div>
