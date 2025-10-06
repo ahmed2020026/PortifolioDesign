@@ -4,25 +4,26 @@ import { getThemes } from "@/context/Mode";
 import { ReactTyped } from "react-typed";
 
 export const HeroSection = () => {
-    const {order} = getThemes()!;
+    const { order } = getThemes()!;
+    
     return (
         <>
-            <section className={`flex justify-center items-center ${order ? "bg-gray-900" : 'bg-gray-50' } `}>
-                <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center" style={{padding:"0 20px"}}>
+            <section id='home' className={`flex justify-center items-center ${order ? "bg-gray-900" : 'bg-gray-50'} `}>
+                <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center" style={{ padding: "0 20px" }}>
 
                     {/* النصوص */}
                     <div className="text-center md:text-left order-2 md:order-1">
                         <p className={`text-blue-500`}>Hello! I'm</p>
-                        <h1 className={`text-2xl md:text-4xl font-[500] mb-5 ${order? 'text-white': 'text-black'}`}>
+                        <h1 className={`text-2xl md:text-4xl font-[500] mb-5 ${order ? 'text-white' : 'text-black'}`}>
                             <ReactTyped
-                                strings={["Ahmed Samir", "Frontend Developer", "React Developer" , "JavaScript Developer"]}
+                                strings={["Ahmed Samir", "Frontend Developer", "React Developer", "JavaScript Developer"]}
                                 typeSpeed={50}
                                 backSpeed={50}
                                 loop
                             />
                         </h1>
 
-                        <p className={`text-md md:text-lg max-w-xl mb-8 opacity-70 ${order ? 'text-white': ''}`}>
+                        <p className={`text-md md:text-lg max-w-xl mb-8 opacity-70 ${order ? 'text-white' : ''}`}>
                             I build modern, responsive, and high-performance web applications
                             with React, TypeScript, and TailwindCSS.
                         </p>

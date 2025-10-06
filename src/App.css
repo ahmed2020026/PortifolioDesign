@@ -126,3 +126,7 @@
 section{
   @apply pt-20 min-h-screen
 }
+
+.blur-defficult{
+  backdrop-filter: blur(8px);
+}

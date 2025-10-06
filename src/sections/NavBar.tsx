@@ -26,6 +26,11 @@ export const Navbar = () => {
         setOrder(!order)
     }
 
+    /* scroll to bookmark */
+    const scrollToBookMark = (e: string) => {
+        document.getElementById(e)?.scrollIntoView({ behavior: "smooth" })
+    }
+
     return (
         <div className={`container rounded-lg shadow ${order ? 'bg-gray-950' : 'bg-white'}  relative`}>
             <div className="flex items-center justify-between">
@@ -35,7 +40,7 @@ export const Navbar = () => {
                     <nav className="hidden md:block" >
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`}>
+                                <Button key={index} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => scrollToBookMark(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
