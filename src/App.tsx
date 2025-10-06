@@ -4,7 +4,7 @@ import { HeroSection } from "./sections/HeroSection"
 import { Navbar } from "./sections/NavBar"
 import { ProjectSection } from "./sections/Projects"
 import { SkillsSection } from "./sections/ٍSkills"
-
+import { ContactSection } from './sections/Contact'
 export const App = () => {
     const order = getThemes()
     return (
@@ -22,6 +22,7 @@ export const App = () => {
                 <About />
                 <SkillsSection />
                 <ProjectSection />
+                <ContactSection />
             </main>
         </>
     )

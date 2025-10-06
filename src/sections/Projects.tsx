@@ -14,7 +14,7 @@ export const ProjectSection = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
                     {Projects.map((item, index) => (
-                        <div key={index} className={`shadow-md rounded-md relative overflow-hidden  ${order? 'border border-gray-800':'border border-white'}`}>
+                        <div key={index} className={`shadow-md rounded-md relative overflow-hidden border ${order ? 'border-gray-800' : 'border-white'}`}>
                             <img src={item.image} alt={item.title} className="w-full h-48" />
                             <div className="p-5 flex flex-col justify-start h-[200px] ">
                                 <div>
