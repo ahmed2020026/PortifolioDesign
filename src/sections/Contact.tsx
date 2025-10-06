@@ -32,7 +32,7 @@ export const ContactSection = () => {
                             </Avatar>
                             <div className="flex flex-col leading-tight">
                                 <h3 className="text-sm font-semibold">Gmail</h3>
-                                <p className="text-xs text-gray-700 dark:text-gray-400">
+                                <p className="text-xs text-gray-500 dark:text-gray-400">
                                     ahmedsamirhad17@gmail.com
                                 </p>
                             </div>
@@ -50,7 +50,7 @@ export const ContactSection = () => {
                             </Avatar>
                             <div className="flex flex-col leading-tight">
                                 <h3 className="text-sm font-semibold">Phone</h3>
-                                <p className="text-xs text-gray-700 dark:text-gray-400">
+                                <p className="text-xs text-gray-500 dark:text-gray-400">
                                     +20 106 348 3113
                                 </p>
                             </div>
