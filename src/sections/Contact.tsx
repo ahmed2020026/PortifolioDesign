@@ -27,7 +27,7 @@ export const ContactSection = () => {
                                 : "bg-gray-100 border-gray-200 text-gray-800"
                                 }`}
                         >
-                            <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <Avatar aria-hidden='true' className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Mail className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
@@ -45,7 +45,7 @@ export const ContactSection = () => {
                                 : "bg-gray-100 border-gray-200 text-gray-800"
                                 }`}
                         >
-                            <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <Avatar aria-hidden='true' className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Phone className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
@@ -56,17 +56,17 @@ export const ContactSection = () => {
                             </div>
                         </div>
                         <div className="flex justify-center items-center lg:justify-start gap-2">
-                            <a href="#" aria-label="Github" target="_blank">
+                            <a href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="#" aria-label="LinkedIn" target="_blank">
+                            <a href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Linkedin className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="#" aria-label="facebook" target="_blank">
+                            <a href="https://www.facebook.com/share/16AS9EoBzS/" rel="noopener noreferrer" aria-label="facebook" target="_blank">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Facebook className="text-blue-500" size={22} />
                                 </Avatar>
@@ -88,6 +88,7 @@ export const ContactSection = () => {
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input type="text"
                                     name="user_name"
+                                    aria-label="Your Name"
                                     placeholder="Your Name"
                                     style={{ transition: 'all 150ms' }}
                                     className={`w-full px-4 py-2 rounded-lg outline-none resize-none ${order
@@ -97,6 +98,7 @@ export const ContactSection = () => {
                                 <Input type="email"
                                     name="email"
                                     placeholder="Your Email"
+                                    aria-label="Your Email"
                                     style={{ transition: 'all 150ms' }}
                                     className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
                                         ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
@@ -107,6 +109,7 @@ export const ContactSection = () => {
                             <Textarea
                                 rows={5}
                                 name="message"
+                                aria-label="message"
                                 placeholder="Your Message..."
                                 style={{ transition: 'all 150ms' }}
                                 className={`w-full px-4 py-2 rounded-lg outline-none resize-none ${order
@@ -114,7 +117,7 @@ export const ContactSection = () => {
                                     : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                     }`}
                             ></Textarea>
-                            <Button size="lg" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700">
+                            <Button size="lg" type="submit" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700">
                                 Send Message
                             </Button>
                         </form>

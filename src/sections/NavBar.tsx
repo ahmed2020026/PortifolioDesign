@@ -2,6 +2,7 @@ import { NavLinks } from "@/assets/system";
 import { Button } from "@/components/ui/button";
 import { getThemes } from "@/context/Mode";
 import { GetHeight } from "@/hooks/GetHeight";
+import { ScrollTo } from "@/hooks/ScrollTo";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useRef, useState } from "react";
 
@@ -26,10 +27,6 @@ export const Navbar = () => {
         setOrder(!order)
     }
 
-    /* scroll to bookmark */
-    const scrollToBookMark = (e: string) => {
-        document.getElementById(e)?.scrollIntoView({ behavior: "smooth" })
-    }
 
     return (
         <div className={`container rounded-lg shadow ${order ? 'bg-gray-950' : 'bg-white'}  relative`}>
@@ -40,7 +37,7 @@ export const Navbar = () => {
                     <nav className="hidden md:block" >
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => scrollToBookMark(item.rots)}>
+                                <Button key={index} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
