@@ -2,6 +2,7 @@ import { getThemes, Themes } from "./context/Mode"
 import { About } from "./sections/About"
 import { HeroSection } from "./sections/HeroSection"
 import { Navbar } from "./sections/NavBar"
+import { ProjectSection } from "./sections/Projects"
 import { SkillsSection } from "./sections/ٍSkills"
 
 export const App = () => {
@@ -20,6 +21,7 @@ export const App = () => {
                 <HeroSection />
                 <About />
                 <SkillsSection />
+                <ProjectSection />
             </main>
         </>
     )

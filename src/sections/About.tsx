@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button"
 import { getThemes } from "@/context/Mode"
 
 export const About = () => {
@@ -35,6 +36,9 @@ export const About = () => {
                         experiences that make a difference.
                     </p>
                 </div>
+                <Button size="lg" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700 mt-10">
+                    Download CV
+                </Button>
             </div>
         </section>
 
