@@ -14,16 +14,16 @@ export const ProjectSection = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
                     {Projects.map((item, index) => (
-                        <div key={index} className="shadow-md rounded-md relative">
+                        <div key={index} className={`shadow-md rounded-md relative overflow-hidden  ${order? 'border border-gray-800':'border border-white'}`}>
                             <img src={item.image} alt={item.title} className="w-full h-48" />
                             <div className="p-5 flex flex-col justify-start h-[200px] ">
                                 <div>
-                                    <h3 className={`text-xl text-start font-semibold mb-2 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"} `}>
+                                    <h3 className={`text-xl text-start font-semibold mb-2`}>
                                         {item.title}
                                     </h3>
                                     <div className="flex flex-wrap justify-start gap-2 mb-4">
                                         {item.tech.map((t, index) => (
-                                            <span key={index} className={`px-3 py-1 text-xs rounded-full ${order ? "bg-gray-700 text-gray-200" : "bg-gray-200 text-gray-800"}`}>{t} </span>))}
+                                            <span key={index} className={`px-3 py-1 text-xs rounded-full ${order ? "bg-gray-800 text-gray-400" : "bg-gray-200 text-gray-800"}`}>{t} </span>))}
                                     </div>
                                 </div>
                                 <div className="flex gap-3 mt-auto justify-between">
