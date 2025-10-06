@@ -36,7 +36,7 @@ export const About = () => {
                         experiences that make a difference.
                     </p>
                 </div>
-                <Button size="lg" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700 mt-10">
+                <Button size="lg" aria-label="Download Ahmed Samir CV in PDF format" className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700 mt-10">
                     Download CV
                 </Button>
             </div>

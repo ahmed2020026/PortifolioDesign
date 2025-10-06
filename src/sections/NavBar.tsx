@@ -35,7 +35,7 @@ export const Navbar = () => {
         <div className={`container rounded-lg shadow ${order ? 'bg-gray-950' : 'bg-white'}  relative`}>
             <div className="flex items-center justify-between">
                 <div className="flex items-start gap-2">
-                    <h2 className={`font-bold text-2xl ${order ? 'text-gray-50' : 'text-gray-950'}`}>A.<span className="text-blue-600">SAMIR</span></h2>
+                    <h1 className={`font-bold text-2xl ${order ? 'text-gray-50' : 'text-gray-950'}`}>A.<span className="text-blue-600">SAMIR</span></h1>
                     {/* menu in large Screen */}
                     <nav className="hidden md:block" >
                         {

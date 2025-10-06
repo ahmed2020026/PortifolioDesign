@@ -14,14 +14,14 @@ export const HeroSection = () => {
                     {/* النصوص */}
                     <div className="text-center md:text-left order-2 md:order-1">
                         <p className={`text-blue-500`}>Hello! I'm</p>
-                        <h1 className={`text-2xl md:text-4xl font-[500] mb-5 ${order ? 'text-white' : 'text-black'}`}>
+                        <h2 className={`text-2xl md:text-4xl font-[500] mb-5 ${order ? 'text-white' : 'text-black'}`}>
                             <ReactTyped
                                 strings={["Ahmed Samir", "Frontend Developer", "React Developer", "JavaScript Developer"]}
                                 typeSpeed={50}
                                 backSpeed={50}
                                 loop
                             />
-                        </h1>
+                        </h2>
 
                         <p className={`text-md md:text-lg max-w-xl mb-8 opacity-70 ${order ? 'text-white' : ''}`}>
                             I build modern, responsive, and high-performance web applications

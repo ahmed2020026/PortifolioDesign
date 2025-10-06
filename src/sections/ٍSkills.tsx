@@ -1,5 +1,6 @@
 import { Skills } from "@/assets/system"
 import { getThemes } from "@/context/Mode"
+import React from "react"
 
 export const SkillsSection = () => {
     const { order } = getThemes()!
@@ -19,7 +20,7 @@ export const SkillsSection = () => {
                             className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"
                                 }`}
                         >
-                            <div className="text-4xl mb-3">{skill.icon}</div>
+                            <div className="text-4xl mb-3">{React.cloneElement(skill.icon, { 'aria-hidden': true })}</div>
                             <h3 className="font-medium text-lg">{skill.name}</h3>
                         </div>
                     ))}

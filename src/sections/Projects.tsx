@@ -27,11 +27,11 @@ export const ProjectSection = () => {
                                     </div>
                                 </div>
                                 <div className="flex gap-3 mt-auto justify-between">
-                                    <a href={item.demo} target="_blank" className="flex items-center gap-1 text-blue-500">
-                                        <ExternalLink size={18} /> Live Demo
+                                    <a href={item.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-blue-500">
+                                        <ExternalLink size={18} aria-hidden='true' /> Live Demo
                                     </a>
-                                    <a href={`https://github.com/ahmed2020026${item.github}`} target="_blank" className={`flex items-center gap-1 px-2 py-1 border rounded-lg ${order? 'text-gray-600 border-gray-600': 'text-gray-500 border-gray-500'}`}>
-                                        <Github size={18} /> github
+                                    <a href={`https://github.com/ahmed2020026${item.github}`} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-1 px-2 py-1 border rounded-lg ${order? 'text-gray-600 border-gray-600': 'text-gray-500 border-gray-500'}`}>
+                                        <Github size={18} aria-hidden='true' /> github
                                     </a>
                                 </div>
                             </div>

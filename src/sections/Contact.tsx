@@ -28,7 +28,7 @@ export const ContactSection = () => {
                                 }`}
                         >
                             <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
-                                <Mail className="text-blue-500" size={22} />
+                                <Mail className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
                                 <h3 className="text-sm font-semibold">Gmail</h3>
@@ -46,7 +46,7 @@ export const ContactSection = () => {
                                 }`}
                         >
                             <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
-                                <Phone className="text-blue-500" size={22} />
+                                <Phone className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
                                 <h3 className="text-sm font-semibold">Phone</h3>
