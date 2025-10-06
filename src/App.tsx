@@ -2,6 +2,7 @@ import { getThemes, Themes } from "./context/Mode"
 import { About } from "./sections/About"
 import { HeroSection } from "./sections/HeroSection"
 import { Navbar } from "./sections/NavBar"
+import { SkillsSection } from "./sections/ٍSkills"
 
 export const App = () => {
     const order = getThemes()
@@ -9,8 +10,8 @@ export const App = () => {
         <>
             <header
                 className={`fixed top-0 left-0 w-full z-20 p-2 blur-defficult ${order?.order
-                        ? 'bg-gray-900/40 text-white'
-                        : 'bg-white/60 text-gray-900'
+                    ? 'bg-gray-900/40 text-white'
+                    : 'bg-white/60 text-gray-900'
                     } `}>
                 <Navbar />
             </header>
@@ -18,6 +19,7 @@ export const App = () => {
             <main>
                 <HeroSection />
                 <About />
+                <SkillsSection />
             </main>
         </>
     )
