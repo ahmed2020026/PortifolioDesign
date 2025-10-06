@@ -27,7 +27,7 @@ export const ContactSection = () => {
                                 : "bg-gray-100 border-gray-200 text-gray-800"
                                 }`}
                         >
-                            <Avatar className="flex duration-150 items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Mail className="text-blue-500" size={22} />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
@@ -40,12 +40,12 @@ export const ContactSection = () => {
 
                         {/* Phone */}
                         <div
-                            className={`flex items-center gap-3 duration-150 px-3 py-2 rounded-xl shadow border ${order
+                            className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
                                 ? "bg-gray-800 border-gray-700 text-gray-200"
                                 : "bg-gray-100 border-gray-200 text-gray-800"
                                 }`}
                         >
-                            <Avatar className="flex duration-150 items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Phone className="text-blue-500" size={22} />
                             </Avatar>
                             <div className="flex flex-col leading-tight">
@@ -56,18 +56,18 @@ export const ContactSection = () => {
                             </div>
                         </div>
                         <div className="flex justify-center items-center lg:justify-start gap-2">
-                            <a href="#">
-                                <Avatar className="flex duration-150 items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a href="#" aria-label="Github" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="#">
-                                <Avatar className="flex items-center duration-150 justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a href="#" aria-label="LinkedIn" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Linkedin className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="#">
-                                <Avatar className="flex items-center duration-150 justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a href="#" aria-label="facebook" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Facebook className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
@@ -87,13 +87,15 @@ export const ContactSection = () => {
                         >
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input type="text"
+                                    name="user_name"
                                     placeholder="Your Name"
                                     style={{ transition: 'all 150ms' }}
-                                    className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
+                                    className={`w-full px-4 py-2 rounded-lg outline-none resize-none ${order
                                         ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
                                         : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                         }`} />
                                 <Input type="email"
+                                    name="email"
                                     placeholder="Your Email"
                                     style={{ transition: 'all 150ms' }}
                                     className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
@@ -104,9 +106,10 @@ export const ContactSection = () => {
 
                             <Textarea
                                 rows={5}
+                                name="message"
                                 placeholder="Your Message..."
                                 style={{ transition: 'all 150ms' }}
-                                className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
+                                className={`w-full px-4 py-2 rounded-lg outline-none resize-none ${order
                                     ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
                                     : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                     }`}

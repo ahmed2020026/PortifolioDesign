@@ -1,4 +1,4 @@
-import { getThemes, Themes } from "./context/Mode"
+import { getThemes } from "./context/Mode"
 import { About } from "./sections/About"
 import { HeroSection } from "./sections/HeroSection"
 import { Navbar } from "./sections/NavBar"
