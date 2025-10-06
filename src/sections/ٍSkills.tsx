@@ -16,7 +16,7 @@ export const SkillsSection = () => {
                     {Skills.map((skill, index) => (
                         <div
                             key={index}
-                            className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"
+                            className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"
                                 }`}
                         >
                             <div className="text-4xl mb-3">{skill.icon}</div>

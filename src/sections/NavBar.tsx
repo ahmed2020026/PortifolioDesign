@@ -55,7 +55,7 @@ export const Navbar = () => {
                     }}>
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} variant="ghost" className={`cursor-pointer text-left block w-full bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`}>
+                                <Button key={index} variant="ghost" className={`cursor-pointer text-left block w-full bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => scrollToBookMark(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
