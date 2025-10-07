@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { getThemes } from "@/context/Mode";
-import { motion } from "framer-motion";
 
 export const About = () => {
     const { order } = getThemes()!;
@@ -10,13 +9,7 @@ export const About = () => {
             id="about"
             className={`flex justify-center items-center py-20 px-4 ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
         >
-            <motion.div
-                className="container text-center max-w-3xl"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-            >
+            <div className="container text-center max-w-3xl">
                 {/* العنوان */}
                 <h2
                     className={`text-2xl md:text-4xl font-semibold mb-8 ${order ? "text-white" : "text-gray-900"}`}
@@ -81,7 +74,7 @@ export const About = () => {
                         View CV
                     </Button>
                 </div>
-            </motion.div>
+            </div>
         </section>
     );
 }

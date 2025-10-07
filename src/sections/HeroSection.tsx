@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { getThemes } from "@/context/Mode";
 import { ScrollTo } from "@/hooks/useScroll";
 import { ReactTyped } from 'react-typed';
-import { motion } from "framer-motion";
 
 export const HeroSection = () => {
     const { order } = getThemes()!;
@@ -13,13 +12,7 @@ export const HeroSection = () => {
             <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center px-5">
 
                 {/* النصوص */}
-                <motion.div
-                    className="text-center md:text-left order-2 md:order-1"
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                >
+                <div className="text-center md:text-left order-2 md:order-1">
                     <p className="text-blue-600">Hello! I'm</p>
                     <h2 className={`text-2xl md:text-4xl font-[500] mb-5 ${order ? 'text-white' : 'text-black'}`}>
                         <ReactTyped
@@ -52,22 +45,16 @@ export const HeroSection = () => {
                             Contact Me
                         </Button>
                     </div>
-                </motion.div>
+                </div>
 
                 {/* الصورة */}
-                <motion.div
-                    className="flex justify-center md:justify-end order-1 md:order-2"
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                >
+                <div className="flex justify-center md:justify-end order-1 md:order-2">
                     <img
                         src={Person}
                         alt="Ahmed profile"
                         className="rounded-full w-70 h-70 md:w-90 md:h-90 object-cover object-[50%_10%] border-4"
                     />
-                </motion.div>
+                </div>
             </div>
         </section>
     );

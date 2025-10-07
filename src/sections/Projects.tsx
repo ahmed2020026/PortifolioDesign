@@ -1,7 +1,6 @@
 import { Projects } from "@/assets/system";
 import { getThemes } from "@/context/Mode";
 import { ExternalLink, Github } from "lucide-react";
-import { motion } from "framer-motion";
 
 export const ProjectSection = () => {
     const { order } = getThemes()!;
@@ -13,26 +12,16 @@ export const ProjectSection = () => {
         >
             <div className="container">
                 {/* العنوان */}
-                <motion.h2
-                    className={`text-2xl mb-12 md:text-4xl font-semibold text-center ${order ? "text-white" : "text-gray-900"}`}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                >
+                <h2 className={`text-2xl mb-12 md:text-4xl font-semibold text-center ${order ? "text-white" : "text-gray-900"}`}>
                     My Works
-                </motion.h2>
+                </h2>
 
                 {/* مشاريع */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {Projects.map((item, index) => (
-                        <motion.div
+                        <div
                             key={index}
                             className={`shadow-md rounded-md relative overflow-hidden border ${order ? 'border-gray-800' : 'border-white'}`}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
                             <img src={item.image} alt={item.title} className="w-full h-48" />
                             <div className="p-5 flex flex-col justify-start h-[200px]">
@@ -69,7 +58,7 @@ export const ProjectSection = () => {
                                     </a>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

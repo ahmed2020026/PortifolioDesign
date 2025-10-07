@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useRef } from "react";
 import { Data, useSend } from "@/hooks/useSend";
-import { motion } from "framer-motion";
 
 export const ContactSection = () => {
     const { order } = getThemes()!;
@@ -51,13 +50,7 @@ export const ContactSection = () => {
 
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     {/* ===== Left Info Section ===== */}
-                    <motion.div
-                        className="flex flex-col gap-4"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                    >
+                    <div className="flex flex-col gap-4">
                         {/* Gmail */}
                         <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
                             ? "bg-gray-800 border-gray-700 text-gray-200"
@@ -108,16 +101,10 @@ export const ContactSection = () => {
                                 </Avatar>
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* ===== Form Section ===== */}
-                    <motion.div
-                        className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
-                    >
+                    <div className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
                         <form ref={Data} onSubmit={Submit} className="flex flex-col gap-4">
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input
@@ -164,7 +151,7 @@ export const ContactSection = () => {
                                 Send Message
                             </Button>
                         </form>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
