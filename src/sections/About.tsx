@@ -1,24 +1,31 @@
-import { Button } from "@/components/ui/button"
-import { getThemes } from "@/context/Mode"
+import { Button } from "@/components/ui/button";
+import { getThemes } from "@/context/Mode";
+import { motion } from "framer-motion";
 
 export const About = () => {
-    const { order } = getThemes()!
+    const { order } = getThemes()!;
+
     return (
         <section
             id="about"
             className={`flex justify-center items-center py-20 px-4 ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
         >
-            <div className="container text-center max-w-3xl">
+            <motion.div
+                className="container text-center max-w-3xl"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+            >
                 {/* العنوان */}
                 <h2
-                    data-aos="fade-down"
                     className={`text-2xl md:text-4xl font-semibold mb-8 ${order ? "text-white" : "text-gray-900"}`}
                 >
                     About Me
                 </h2>
 
                 {/* الفقرات */}
-                <div data-aos="fade-up" className={`text-base md:text-lg leading-relaxed tracking-wide opacity-80 ${order ? "text-gray-300" : "text-gray-700"}`}>
+                <div className={`text-base md:text-lg leading-relaxed tracking-wide opacity-80 ${order ? "text-gray-300" : "text-gray-700"}`}>
                     <p className="mb-4">
                         Hi! I’m <span className="font-semibold">Ahmed Samir</span>, a passionate{" "}
                         <span className="text-blue-700 font-medium">Front-End Developer</span> who loves creating
@@ -46,7 +53,7 @@ export const About = () => {
                 </div>
 
                 {/* الأزرار */}
-                <div data-aos="fade-up" data-aos-delay="200" className="flex justify-center items-center gap-1.5 mt-10">
+                <div className="flex justify-center items-center gap-1.5 mt-10">
                     <Button
                         size="lg"
                         onClick={() => {
@@ -74,7 +81,7 @@ export const About = () => {
                         View CV
                     </Button>
                 </div>
-            </div>
+            </motion.div>
         </section>
-    )
+    );
 }

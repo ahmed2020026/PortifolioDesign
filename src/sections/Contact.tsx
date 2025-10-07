@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useRef } from "react";
 import { Data, useSend } from "@/hooks/useSend";
+import { motion } from "framer-motion";
 
 export const ContactSection = () => {
     const { order } = getThemes()!;
     const Data = useRef<HTMLFormElement>(null);
 
-    const Submit = (e: React.FormEvent<HTMLFormElement>) => {
+    const Submit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = Data.current;
         if (form) {
@@ -19,19 +20,9 @@ export const ContactSection = () => {
             const emailInput = form.querySelector<HTMLInputElement>('input[name="user_email"]');
             const messageInput = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
 
-            // التحقق من المدخلات
-            if (!nameInput?.value.trim()) {
-                nameInput?.focus();
-                return;
-            }
-            if (!emailInput?.value.trim()) {
-                emailInput?.focus();
-                return;
-            }
-            if (!messageInput?.value.trim()) {
-                messageInput?.focus();
-                return;
-            }
+            if (!nameInput?.value.trim()) { nameInput?.focus(); return; }
+            if (!emailInput?.value.trim()) { emailInput?.focus(); return; }
+            if (!messageInput?.value.trim()) { messageInput?.focus(); return; }
 
             const formData = new FormData(form);
             const PersonalData: Data = {
@@ -39,8 +30,8 @@ export const ContactSection = () => {
                 user_email: formData.get("user_email") as string,
                 message: formData.get("message") as string,
             };
-            useSend(PersonalData);
-            Data.current?.reset()
+            const res = await useSend(PersonalData);
+            if (res) Data.current?.reset();
         }
     };
 
@@ -51,7 +42,7 @@ export const ContactSection = () => {
         >
             <div className="container">
                 {/* Header */}
-                <div data-aos="fade-up" className="container mx-auto text-center mb-12">
+                <div className="container mx-auto text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold">Contact Me</h2>
                     <p className="mt-2 text-sm text-gray-700 dark:text-gray-400">
                         Feel free to reach out anytime — I’d love to hear from you!
@@ -60,15 +51,18 @@ export const ContactSection = () => {
 
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     {/* ===== Left Info Section ===== */}
-                    <div className="flex flex-col gap-4">
+                    <motion.div
+                        className="flex flex-col gap-4"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
                         {/* Gmail */}
-                        <div
-                            data-aos="fade-right"
-                            className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
-                                ? "bg-gray-800 border-gray-700 text-gray-200"
-                                : "bg-gray-100 border-gray-200 text-gray-800"
-                                }`}
-                        >
+                        <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
+                            ? "bg-gray-800 border-gray-700 text-gray-200"
+                            : "bg-gray-100 border-gray-200 text-gray-800"
+                            }`}>
                             <Avatar aria-hidden="true" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Mail className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
@@ -81,14 +75,10 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Phone */}
-                        <div
-                            data-aos="fade-right"
-                            data-aos-delay="100"
-                            className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
-                                ? "bg-gray-800 border-gray-700 text-gray-200"
-                                : "bg-gray-100 border-gray-200 text-gray-800"
-                                }`}
-                        >
+                        <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
+                            ? "bg-gray-800 border-gray-700 text-gray-200"
+                            : "bg-gray-100 border-gray-200 text-gray-800"
+                            }`}>
                             <Avatar aria-hidden="true" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Phone className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
@@ -101,27 +91,33 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Socials */}
-                        <div data-aos="fade-right" data-aos-delay="200" className="flex justify-center items-center lg:justify-start gap-2">
-                            <a href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
+                        <div className="flex justify-center items-center lg:justify-start gap-2">
+                            <a href="https://github.com/ahmed2020026" target="_blank" rel="noopener noreferrer" aria-label="Github">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
+                            <a href="https://www.linkedin.com/in/ahmed-samir-513237251" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Linkedin className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="https://www.facebook.com/share/16AS9EoBzS/" rel="noopener noreferrer" aria-label="facebook" target="_blank">
+                            <a href="https://www.facebook.com/share/16AS9EoBzS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Facebook className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* ===== Form Section ===== */}
-                    <div data-aos="fade-left" className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
+                    <motion.div
+                        className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                    >
                         <form ref={Data} onSubmit={Submit} className="flex flex-col gap-4">
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input
@@ -168,7 +164,7 @@ export const ContactSection = () => {
                                 Send Message
                             </Button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

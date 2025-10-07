@@ -1,9 +1,11 @@
-import { Skills } from "@/assets/system"
-import { getThemes } from "@/context/Mode"
-import React from "react"
+import { Skills } from "@/assets/system";
+import { getThemes } from "@/context/Mode";
+import React from "react";
+import { motion } from "framer-motion";
 
 export const SkillsSection = () => {
-    const { order } = getThemes()!
+    const { order } = getThemes()!;
+
     return (
         <section
             id="skills"
@@ -11,29 +13,35 @@ export const SkillsSection = () => {
         >
             <div className="container mx-auto text-center">
                 {/* العنوان */}
-                <h2 data-aos="fade-down" className="text-3xl md:text-4xl font-semibold mb-12">
+                <motion.h2
+                    className="text-3xl md:text-4xl font-semibold mb-12"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                >
                     My Skills
-                </h2>
+                </motion.h2>
 
                 {/* المهارات */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
                     {Skills.map((skill, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            data-aos="fade-up"
-                            data-aos-delay={index * 100} // تأخير متدرج لكل skill
-                            className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
+                            className={`p-6 rounded-xl shadow-md hover:shadow-lg border border-white/20 transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
                             <div className="text-4xl mb-3">
                                 {React.cloneElement(skill.icon, { 'aria-hidden': true })}
                             </div>
                             <h3 className="font-medium text-lg">{skill.name}</h3>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
         </section>
-
-    )
+    );
 }
-

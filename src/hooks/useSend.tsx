@@ -1,30 +1,34 @@
 import emailjs from '@emailjs/browser';
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 export interface Data {
-    user_name: string,
-    user_email: string,
-    message: string
+    user_name: string;
+    user_email: string;
+    message: string;
 }
 
-export const useSend = ({ user_name, user_email, message }: Data) => {
+export const useSend = async ({ user_name, user_email, message }: Data): Promise<boolean> => {
+    if (!user_name || !user_email || !message) return false;
+
     const emailData = {
-        user_name: user_name,   // من الفورم أو state
-        user_email: user_email, // من الفورم أو state
-        time: new Date().toLocaleString(), // ممكن تعمل current date/time
-        message: message        // نص الرسالة
+        user_name,
+        user_email,
+        message,
+        time: new Date().toLocaleString()
     };
+
     try {
-        emailjs.send(
+        await emailjs.send(
             'service_6g24gt3',
             'template_imn9jer',
             emailData,
             'WNVR_tWPumhREht6F'
-        ).then(() => {
-            toast.success("Message sent successfully!")
-        })
-    } catch (error) {
-        toast.error("Failed to send message")
-    }
-}
+        );
 
+        toast.success("Message sent successfully!");
+        return true; // ← هنا return النهائي
+    } catch (error) {
+        toast.error("Failed to send message");
+        return false; // ← هنا return النهائي لو حصل خطأ
+    }
+};
