@@ -36,9 +36,28 @@ export const About = () => {
                         experiences that make a difference.
                     </p>
                 </div>
-                <Button size="lg" aria-label="Download Ahmed Samir CV in PDF format" className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700 mt-10">
-                    Download CV
-                </Button>
+                <div className="flex justify-center items-center gap-1.5">
+                    <Button size="lg" onClick={() => {
+                        const link = document.createElement("a");
+                        link.href = "https://raw.githubusercontent.com/ahmed2020026/MY_CV/main/Ahmed_Samir_FrontEnd_CV.pdf";
+                        link.download = "Ahmed_Samir_FrontEnd_CV.pdf";
+                        link.click();
+                    }} 
+                    aria-label="Download Ahmed Samir CV in PDF format"
+                    className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700 mt-10">
+                        Download CV
+                    </Button>
+                    <Button size="lg" onClick={() =>
+                        window.open(
+                            "https://github.com/ahmed2020026/MY_CV/blob/main/Ahmed_Samir_FrontEnd_CV.pdf",
+                            "_blank"
+                        )
+                    } 
+                    aria-label="Download Ahmed Samir CV in PDF format"
+                    className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700 mt-10">
+                        View CV
+                    </Button>
+                </div>
             </div>
         </section>
 

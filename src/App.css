@@ -114,6 +114,7 @@
   * {
     @apply border-border outline-ring/50 duration-150;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -123,10 +124,10 @@
   @apply p-2 mx-auto
 }
 
-section{
-  @apply pt-20 min-h-screen
+section:not([aria-label='Notifications alt+T']) {
+  @apply pt-20 min-h-screen;
 }
 
-.blur-defficult{
+.blur-defficult {
   backdrop-filter: blur(8px);
 }

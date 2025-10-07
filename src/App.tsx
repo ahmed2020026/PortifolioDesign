@@ -6,6 +6,7 @@ import { ProjectSection } from "./sections/Projects"
 import { SkillsSection } from "./sections/ٍSkills"
 import { ContactSection } from './sections/Contact'
 import { Footer } from "./sections/Footer"
+
 export const App = () => {
     const {order} = getThemes()!
     return (
