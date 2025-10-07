@@ -22,7 +22,7 @@ export const SkillsSection = () => {
                             key={index}
                             data-aos="fade-up"
                             data-aos-delay={index * 100} // تأخير متدرج لكل skill
-                            className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
+                            className={`p-6 rounded-xl border border-white/20 shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
                         >
                             <div className="text-4xl mb-3">
                                 {React.cloneElement(skill.icon, { 'aria-hidden': true })}
