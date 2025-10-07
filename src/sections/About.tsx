@@ -1,9 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { getThemes } from "@/context/Mode";
+import { Button } from "@/components/ui/button"
+import { getThemes } from "@/context/Mode"
+import AOS from "aos";
+import { useEffect } from "react";
 
 export const About = () => {
-    const { order } = getThemes()!;
-
+    const { order } = getThemes()!
+    useEffect(() => {
+        AOS.refresh();
+    }, [order]);
     return (
         <section
             id="about"
@@ -12,13 +16,14 @@ export const About = () => {
             <div className="container text-center max-w-3xl">
                 {/* العنوان */}
                 <h2
+                    data-aos="fade-down"
                     className={`text-2xl md:text-4xl font-semibold mb-8 ${order ? "text-white" : "text-gray-900"}`}
                 >
                     About Me
                 </h2>
 
                 {/* الفقرات */}
-                <div className={`text-base md:text-lg leading-relaxed tracking-wide opacity-80 ${order ? "text-gray-300" : "text-gray-700"}`}>
+                <div data-aos="fade-up" className={`text-base md:text-lg leading-relaxed tracking-wide opacity-80 ${order ? "text-gray-300" : "text-gray-700"}`}>
                     <p className="mb-4">
                         Hi! I’m <span className="font-semibold">Ahmed Samir</span>, a passionate{" "}
                         <span className="text-blue-700 font-medium">Front-End Developer</span> who loves creating
@@ -46,7 +51,7 @@ export const About = () => {
                 </div>
 
                 {/* الأزرار */}
-                <div className="flex justify-center items-center gap-1.5 mt-10">
+                <div data-aos="fade-up" data-aos-delay="200" className="flex justify-center items-center gap-1.5 mt-10">
                     <Button
                         size="lg"
                         onClick={() => {
@@ -76,5 +81,5 @@ export const About = () => {
                 </div>
             </div>
         </section>
-    );
+    )
 }

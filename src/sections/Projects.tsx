@@ -1,10 +1,10 @@
 import { Projects } from "@/assets/system";
-import { getThemes } from "@/context/Mode";
+import { getThemes } from "@/context/Mode"
 import { ExternalLink, Github } from "lucide-react";
 
-export const ProjectSection = () => {
-    const { order } = getThemes()!;
 
+export const ProjectSection = () => {
+    const { order } = getThemes()!
     return (
         <section
             id="projects"
@@ -12,7 +12,10 @@ export const ProjectSection = () => {
         >
             <div className="container">
                 {/* العنوان */}
-                <h2 className={`text-2xl mb-12 md:text-4xl font-semibold text-center ${order ? "text-white" : "text-gray-900"}`}>
+                <h2
+                    data-aos="fade-down"
+                    className={`text-2xl mb-12 md:text-4xl font-semibold text-center ${order ? "text-white" : "text-gray-900"}`}
+                >
                     My Works
                 </h2>
 
@@ -21,6 +24,9 @@ export const ProjectSection = () => {
                     {Projects.map((item, index) => (
                         <div
                             key={index}
+                            data-aos="fade-up"
+                            style={{transition:'all 150ms'}}
+                            data-aos-delay={index * 100} // تأخير بسيط لكل كارد
                             className={`shadow-md rounded-md relative overflow-hidden border ${order ? 'border-gray-800' : 'border-white'}`}
                         >
                             <img src={item.image} alt={item.title} className="w-full h-48" />
@@ -63,5 +69,5 @@ export const ProjectSection = () => {
                 </div>
             </div>
         </section>
-    );
+    )
 }

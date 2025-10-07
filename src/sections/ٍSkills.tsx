@@ -1,10 +1,14 @@
-import { Skills } from "@/assets/system";
-import { getThemes } from "@/context/Mode";
-import React from "react";
+import { Skills } from "@/assets/system"
+import { getThemes } from "@/context/Mode"
+import React from "react"
+import AOS from "aos";
+import { useEffect } from "react";
 
 export const SkillsSection = () => {
-    const { order } = getThemes()!;
-
+    const { order } = getThemes()!
+    useEffect(() => {
+        AOS.refresh();
+    }, [order]);
     return (
         <section
             id="skills"
@@ -12,7 +16,7 @@ export const SkillsSection = () => {
         >
             <div className="container mx-auto text-center">
                 {/* العنوان */}
-                <h2 className="text-3xl md:text-4xl font-semibold mb-12">
+                <h2 data-aos="fade-down" className="text-3xl md:text-4xl font-semibold mb-12">
                     My Skills
                 </h2>
 
@@ -21,7 +25,10 @@ export const SkillsSection = () => {
                     {Skills.map((skill, index) => (
                         <div
                             key={index}
-                            className={`p-6 rounded-xl shadow-md hover:shadow-lg border border-white/20 transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
+                            data-aos="fade-up"
+                            style={{transition:'all 150ms'}}
+                            data-aos-delay={index * 100} // تأخير متدرج لكل skill
+                            className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
                         >
                             <div className="text-4xl mb-3">
                                 {React.cloneElement(skill.icon, { 'aria-hidden': true })}
@@ -32,5 +39,6 @@ export const SkillsSection = () => {
                 </div>
             </div>
         </section>
-    );
+
+    )
 }

@@ -41,7 +41,7 @@ export const ContactSection = () => {
         >
             <div className="container">
                 {/* Header */}
-                <div className="container mx-auto text-center mb-12">
+                <div data-aos="fade-up" className="container mx-auto text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold">Contact Me</h2>
                     <p className="mt-2 text-sm text-gray-700 dark:text-gray-400">
                         Feel free to reach out anytime — I’d love to hear from you!
@@ -52,10 +52,13 @@ export const ContactSection = () => {
                     {/* ===== Left Info Section ===== */}
                     <div className="flex flex-col gap-4">
                         {/* Gmail */}
-                        <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
-                            ? "bg-gray-800 border-gray-700 text-gray-200"
-                            : "bg-gray-100 border-gray-200 text-gray-800"
-                            }`}>
+                        <div
+                            data-aos="fade-right"
+                            className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
+                                ? "bg-gray-800 border-gray-700 text-gray-200"
+                                : "bg-gray-100 border-gray-200 text-gray-800"
+                                }`}
+                        >
                             <Avatar aria-hidden="true" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Mail className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
@@ -68,10 +71,14 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Phone */}
-                        <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
-                            ? "bg-gray-800 border-gray-700 text-gray-200"
-                            : "bg-gray-100 border-gray-200 text-gray-800"
-                            }`}>
+                        <div
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                            className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
+                                ? "bg-gray-800 border-gray-700 text-gray-200"
+                                : "bg-gray-100 border-gray-200 text-gray-800"
+                                }`}
+                        >
                             <Avatar aria-hidden="true" className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                 <Phone className="text-blue-500" size={22} aria-hidden="true" />
                             </Avatar>
@@ -84,19 +91,19 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Socials */}
-                        <div className="flex justify-center items-center lg:justify-start gap-2">
-                            <a href="https://github.com/ahmed2020026" target="_blank" rel="noopener noreferrer" aria-label="Github">
-                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                        <div data-aos="fade-right" style={{transition:'all 150ms'}} data-aos-delay="200" className="flex justify-center items-center lg:justify-start gap-2">
+                            <a style={{transition:'all 150ms'}} href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
+                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="https://www.linkedin.com/in/ahmed-samir-513237251" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a style={{transition:'all 150ms'}} href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
+                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Linkedin className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a href="https://www.facebook.com/share/16AS9EoBzS/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a style={{transition:'all 150ms'}} href="https://www.facebook.com/share/16AS9EoBzS/" rel="noopener noreferrer" aria-label="facebook" target="_blank">
+                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Facebook className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
@@ -104,7 +111,7 @@ export const ContactSection = () => {
                     </div>
 
                     {/* ===== Form Section ===== */}
-                    <div className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
+                    <div data-aos="fade-left" className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
                         <form ref={Data} onSubmit={Submit} className="flex flex-col gap-4">
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input
