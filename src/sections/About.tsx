@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { getThemes } from "@/context/Mode"
-import AOS from "aos";
-import { useEffect } from "react";
 
 export const About = () => {
     const { order } = getThemes()!
-    useEffect(() => {
-        AOS.refresh();
-    }, [order]);
     return (
         <section
             id="about"

@@ -91,19 +91,19 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Socials */}
-                        <div data-aos="fade-right" style={{transition:'all 150ms'}} data-aos-delay="200" className="flex justify-center items-center lg:justify-start gap-2">
-                            <a style={{transition:'all 150ms'}} href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
-                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                        <div data-aos="fade-right" data-aos-delay="200" className="flex justify-center items-center lg:justify-start gap-2">
+                            <a href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a style={{transition:'all 150ms'}} href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
-                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Linkedin className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>
-                            <a style={{transition:'all 150ms'}} href="https://www.facebook.com/share/16AS9EoBzS/" rel="noopener noreferrer" aria-label="facebook" target="_blank">
-                                <Avatar style={{transition:'all 150ms'}} className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
+                            <a href="https://www.facebook.com/share/16AS9EoBzS/" rel="noopener noreferrer" aria-label="facebook" target="_blank">
+                                <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Facebook className="text-blue-500" size={22} />
                                 </Avatar>
                             </a>

@@ -112,7 +112,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 transition-all;
+    @apply border-border outline-ring/50 duration-150;
   }
 
   body {

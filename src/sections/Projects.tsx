@@ -25,7 +25,6 @@ export const ProjectSection = () => {
                         <div
                             key={index}
                             data-aos="fade-up"
-                            style={{transition:'all 150ms'}}
                             data-aos-delay={index * 100} // تأخير بسيط لكل كارد
                             className={`shadow-md rounded-md relative overflow-hidden border ${order ? 'border-gray-800' : 'border-white'}`}
                         >

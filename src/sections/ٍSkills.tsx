@@ -1,14 +1,9 @@
 import { Skills } from "@/assets/system"
 import { getThemes } from "@/context/Mode"
 import React from "react"
-import AOS from "aos";
-import { useEffect } from "react";
 
 export const SkillsSection = () => {
     const { order } = getThemes()!
-    useEffect(() => {
-        AOS.refresh();
-    }, [order]);
     return (
         <section
             id="skills"
@@ -26,7 +21,6 @@ export const SkillsSection = () => {
                         <div
                             key={index}
                             data-aos="fade-up"
-                            style={{transition:'all 150ms'}}
                             data-aos-delay={index * 100} // تأخير متدرج لكل skill
                             className={`p-6 rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}
                         >
@@ -42,3 +36,4 @@ export const SkillsSection = () => {
 
     )
 }
+

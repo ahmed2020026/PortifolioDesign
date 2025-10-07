@@ -6,18 +6,16 @@ import { ProjectSection } from "./sections/Projects"
 import { SkillsSection } from "./sections/ٍSkills"
 import { ContactSection } from './sections/Contact'
 import { Footer } from "./sections/Footer"
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 export const App = () => {
-    const {order} = getThemes()!
+    const { order } = getThemes()!
     useEffect(() => {
         AOS.init({
-            duration: 800,     // زمن الحركة
-            once: true,        // 👈 دي أهم حاجة: تشغل الحركة مرة واحدة فقط
-            offset: 100,       // امتى تبدأ الحركة (من تحت الشاشة)
-            easing: "ease-out" // الحركة تبقى ناعمة
+            duration: 1000, // سرعة الانيميشن
+            once: true,     // يظهر مرة واحدة فقط
         });
     }, []);
     return (

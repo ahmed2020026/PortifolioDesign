@@ -2,11 +2,15 @@ import { Person } from "@/assets/system";
 import { Button } from "@/components/ui/button";
 import { getThemes } from "@/context/Mode";
 import { ScrollTo } from "@/hooks/useScroll";
+import { useEffect } from "react";
 import { ReactTyped } from "react-typed";
+import AOS from 'aos';
 
 export const HeroSection = () => {
     const { order } = getThemes()!;
-
+    useEffect(() => {
+        AOS.refresh();
+    }, [order]);
     return (
         <>
             <section
