@@ -1,8 +1,8 @@
 import { NavLinks } from "@/assets/system";
 import { Button } from "@/components/ui/button";
 import { getThemes } from "@/context/Mode";
-import { GetHeight } from "@/hooks/GetHeight";
-import { ScrollTo } from "@/hooks/ScrollTo";
+import { GetHeight } from "@/hooks/useHeight";
+import { ScrollTo } from "@/hooks/useScroll";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useRef, useState } from "react";
 

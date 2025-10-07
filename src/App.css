@@ -125,7 +125,7 @@
 }
 
 section:not([aria-label='Notifications alt+T']) {
-  @apply pt-20 min-h-screen;
+  @apply pt-20 min-h-screen overflow-hidden;
 }
 
 .blur-defficult {

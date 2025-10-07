@@ -16,7 +16,7 @@ export const ContactSection = () => {
         const form = Data.current;
         if (form) {
             const nameInput = form.querySelector<HTMLInputElement>('input[name="user_name"]');
-            const emailInput = form.querySelector<HTMLInputElement>('input[name="email"]');
+            const emailInput = form.querySelector<HTMLInputElement>('input[name="user_email"]');
             const messageInput = form.querySelector<HTMLTextAreaElement>('textarea[name="message"]');
 
             // التحقق من المدخلات
@@ -35,8 +35,8 @@ export const ContactSection = () => {
 
             const formData = new FormData(form);
             const PersonalData: Data = {
-                name: formData.get("user_name") as string,
-                gmail: formData.get("email") as string,
+                user_name: formData.get("user_name") as string,
+                user_email: formData.get("user_email") as string,
                 message: formData.get("message") as string,
             };
             useSend(PersonalData);
@@ -47,11 +47,11 @@ export const ContactSection = () => {
     return (
         <section
             id="contact"
-            className={`py-20 px-6 flex justify-center items-center ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"
-                }`}
+            className={`py-20 px-6 flex justify-center items-center ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
         >
-            <div className="container ">
-                <div className="container mx-auto text-center mb-12">
+            <div className="container">
+                {/* Header */}
+                <div data-aos="fade-up" className="container mx-auto text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-semibold">Contact Me</h2>
                     <p className="mt-2 text-sm text-gray-700 dark:text-gray-400">
                         Feel free to reach out anytime — I’d love to hear from you!
@@ -63,6 +63,7 @@ export const ContactSection = () => {
                     <div className="flex flex-col gap-4">
                         {/* Gmail */}
                         <div
+                            data-aos="fade-right"
                             className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
                                 ? "bg-gray-800 border-gray-700 text-gray-200"
                                 : "bg-gray-100 border-gray-200 text-gray-800"
@@ -81,6 +82,8 @@ export const ContactSection = () => {
 
                         {/* Phone */}
                         <div
+                            data-aos="fade-right"
+                            data-aos-delay="100"
                             className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order
                                 ? "bg-gray-800 border-gray-700 text-gray-200"
                                 : "bg-gray-100 border-gray-200 text-gray-800"
@@ -98,7 +101,7 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Socials */}
-                        <div className="flex justify-center items-center lg:justify-start gap-2">
+                        <div data-aos="fade-right" data-aos-delay="200" className="flex justify-center items-center lg:justify-start gap-2">
                             <a href="https://github.com/ahmed2020026" rel="noopener noreferrer" aria-label="Github" target="_blank">
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Github className="text-blue-500" size={22} />
@@ -118,10 +121,7 @@ export const ContactSection = () => {
                     </div>
 
                     {/* ===== Form Section ===== */}
-                    <div
-                        className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"
-                            }`}
-                    >
+                    <div data-aos="fade-left" className={`lg:col-span-2 p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
                         <form ref={Data} onSubmit={Submit} className="flex flex-col gap-4">
                             <div className="flex flex-col md:flex-row gap-4">
                                 <Input
@@ -137,7 +137,7 @@ export const ContactSection = () => {
                                 />
                                 <Input
                                     type="email"
-                                    name="email"
+                                    name="user_email"
                                     placeholder="Your Email"
                                     aria-label="Your Email"
                                     style={{ transition: "all 150ms" }}
@@ -159,6 +159,7 @@ export const ContactSection = () => {
                                     : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
                                     }`}
                             ></Textarea>
+
                             <Button
                                 size="lg"
                                 type="submit"
