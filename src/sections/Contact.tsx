@@ -41,7 +41,7 @@ export const ContactSection = () => {
                 {/* Header */}
                 <Title title="Contact Me" subTitle="Feel free to reach out anytime — I’d love to hear from you!" />
 
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
+                <div className="grid lg:grid-cols-3 gap-8 items-start mt-10">
                     {/* ===== Left Info Section ===== */}
                     <div className="flex flex-col gap-4">
                         {/* Gmail */}
