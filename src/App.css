@@ -112,7 +112,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 duration-150;
+    @apply border-border outline-ring/50 transition-colors duration-150;
   }
 
   body {
@@ -131,3 +131,12 @@ section:not([aria-label='Notifications alt+T']) {
 .blur-defficult {
   backdrop-filter: blur(8px);
 }
+
+/* 
+useEffect(() => {
+documant.documentElement.classList.toggle("dark")
+},[order])
+
+
+@apply transition-colors duration-150
+ */

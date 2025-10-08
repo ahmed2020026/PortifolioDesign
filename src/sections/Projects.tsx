@@ -22,45 +22,39 @@ export const ProjectSection = () => {
                 {/* مشاريع */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {Projects.map((item, index) => (
-                        <div
-                            key={index}
-                            data-aos="fade-up"
-                            data-aos-delay={index * 100} // تأخير بسيط لكل كارد
-                            className={`shadow-md rounded-md relative overflow-hidden border ${order ? 'border-gray-800' : 'border-white'}`}
-                        >
-                            <img src={item.image} alt={item.title} className="w-full h-48" />
-                            <div className="p-5 flex flex-col justify-start h-[200px]">
-                                <div>
-                                    <h3 className="text-xl text-start font-semibold mb-2">{item.title}</h3>
-                                    <div className="flex flex-wrap justify-start gap-2 mb-4">
-                                        {item.tech.map((t, idx) => (
-                                            <span
-                                                key={idx}
-                                                className={`px-3 py-1 text-xs rounded-full ${order ? "bg-gray-800 text-gray-400" : "bg-gray-200 text-gray-800"}`}
-                                            >
-                                                {t}
-                                            </span>
-                                        ))}
+                        <div data-aos="fade-up" data-aos-delay={index * 100}>
+                            <div key={index} className={`shadow-md duration-150 rounded-md relative overflow-hidden border border-white/20 `}>
+                                <img src={item.image} alt={item.title} className="w-full h-48" />
+                                <div className="p-5 flex flex-col justify-start h-[200px]">
+                                    <div>
+                                        <h3 className="text-xl text-start font-semibold mb-2">{item.title}</h3>
+                                        <div className="flex flex-wrap justify-start gap-2 mb-4">
+                                            {item.tech.map((t, idx) => (
+                                                <span key={idx} className={`px-3 py-1 text-xs rounded-full ${order ? "bg-gray-800 text-gray-400" : "bg-gray-200 text-gray-800"}`}>
+                                                    {t}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="flex gap-3 mt-auto justify-between">
-                                    <a
-                                        href={item.demo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center gap-1 text-blue-500"
-                                    >
-                                        <ExternalLink size={18} aria-hidden='true' /> Live Demo
-                                    </a>
-                                    <a
-                                        href={`https://github.com/ahmed2020026${item.github}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`flex items-center gap-1 px-2 py-1 border rounded-lg ${order ? 'text-gray-600 border-gray-600' : 'text-gray-500 border-gray-500'}`}
-                                    >
-                                        <Github size={18} aria-hidden='true' /> github
-                                    </a>
+                                    <div className="flex gap-3 mt-auto justify-between">
+                                        <a
+                                            href={item.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-1 text-blue-500"
+                                        >
+                                            <ExternalLink size={18} aria-hidden='true' /> Live Demo
+                                        </a>
+                                        <a
+                                            href={`https://github.com/ahmed2020026${item.github}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`flex items-center gap-1 px-2 py-1 border rounded-lg ${order ? 'text-gray-600 border-gray-600' : 'text-gray-500 border-gray-500'}`}
+                                        >
+                                            <Github size={18} aria-hidden='true' /> github
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
