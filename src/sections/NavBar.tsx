@@ -37,7 +37,7 @@ export const Navbar = () => {
                     <nav className="hidden md:block" >
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
+                                <Button key={index} style={{ transition: 'all 150ms' }} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
@@ -52,7 +52,7 @@ export const Navbar = () => {
                     }}>
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} variant="ghost" className={`cursor-pointer text-left block w-full bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
+                                <Button key={index} style={{transition:'all 150ms'}} variant="ghost" className={`cursor-pointer text-left block w-full bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
@@ -60,11 +60,11 @@ export const Navbar = () => {
                     </nav>
                 </div>
                 <div className="icons">
-                    <Button variant="ghost" className={`cursor-pointer md:hidden bg-transparent  ${order ? 'text-stone-200 hover:text-stone-200 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} aria-label="btn_menu" onClick={toggle}>
+                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer md:hidden bg-transparent  ${order ? 'text-stone-200 hover:text-stone-200 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} aria-label="btn_menu" onClick={toggle}>
                         <Menu className={open ? 'hidden' : ''} />
                         <X className={!open ? 'hidden' : ''} />
                     </Button>
-                    <Button variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-200 hover:text-blue-500 hover:bg-gray-900' : 'text-stone-800 hover:text-blue-600'}`} aria-label="Themes" onClick={Themes}>
+                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer bg-transparent  ${order ? 'text-stone-200 hover:text-blue-500 hover:bg-gray-900' : 'text-stone-800 hover:text-blue-600'}`} aria-label="Themes" onClick={Themes}>
                         <Moon className={order ? 'hidden' : ''} />
                         <Sun className={!order ? 'hidden' : ''} />
                     </Button>
