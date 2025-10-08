@@ -1,4 +1,5 @@
 import { Projects } from "@/assets/system";
+import { Title } from "@/components/ui/Title";
 import { getThemes } from "@/context/Mode"
 import { ExternalLink, Github } from "lucide-react";
 
@@ -11,13 +12,9 @@ export const ProjectSection = () => {
             className={`flex justify-center items-center py-20 px-4 ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
         >
             <div className="container">
-                {/* العنوان */}
-                <h2
-                    data-aos="fade-down"
-                    className={`text-2xl mb-12 md:text-4xl font-semibold text-center ${order ? "text-white" : "text-gray-900"}`}
-                >
-                    My Works
-                </h2>
+                <div data-aos="fade-down" className="text-center">
+                    <Title title="My Works"/> 
+                </div>
 
                 {/* مشاريع */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

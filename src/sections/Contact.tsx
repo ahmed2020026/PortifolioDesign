@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useRef } from "react";
 import { Data, useSend } from "@/hooks/useSend";
+import { Title } from "@/components/ui/Title";
 
 export const ContactSection = () => {
     const { order } = getThemes()!;
@@ -38,12 +39,7 @@ export const ContactSection = () => {
         <section id="contact" className={`py-20 px-6 flex justify-center items-center ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}>
             <div className="container">
                 {/* Header */}
-                <div data-aos="fade-up" className="container mx-auto text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-semibold">Contact Me</h2>
-                    <p className="mt-2 text-sm text-gray-700 dark:text-gray-400">
-                        Feel free to reach out anytime — I’d love to hear from you!
-                    </p>
-                </div>
+                <Title title="Contact Me" subTitle="Feel free to reach out anytime — I’d love to hear from you!" />
 
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     {/* ===== Left Info Section ===== */}
@@ -121,7 +117,7 @@ export const ContactSection = () => {
                                         name="user_email"
                                         placeholder="Your Email"
                                         aria-label="Your Email"
-                                        style={{transition: 'all 150ms'}}
+                                        style={{ transition: 'all 150ms' }}
                                         className={`w-full px-4 py-2 rounded-lg border outline-none resize-none ${order
                                             ? "bg-gray-900 border-gray-700 text-white placeholder-gray-400"
                                             : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
@@ -142,7 +138,7 @@ export const ContactSection = () => {
                                 ></Textarea>
 
                                 <Button
-                                    size="lg"
+                                    size="default"
                                     type="submit"
                                     className="bg-blue-500 text-white cursor-pointer hover:bg-blue-700"
                                 >

@@ -1,4 +1,5 @@
 import { Skills } from "@/assets/system"
+import { Title } from "@/components/ui/Title"
 import { getThemes } from "@/context/Mode"
 import React from "react"
 
@@ -11,9 +12,9 @@ export const SkillsSection = () => {
         >
             <div className="container mx-auto text-center">
                 {/* العنوان */}
-                <h2 data-aos="fade-down" className="text-3xl md:text-4xl font-semibold mb-12">
-                    My Skills
-                </h2>
+                <div data-aos="fade-down">
+                    <Title title="My Skills" />
+                </div>
 
                 {/* المهارات */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">

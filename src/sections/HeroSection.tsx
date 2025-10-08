@@ -38,22 +38,17 @@ export const HeroSection = () => {
                                 loop
                             />
                         </h2>
+                        <div data-aos="fade-left">
+                            <p className={`text-base duration-150 max-w-xl mb-8  ${order ? 'text-white/50' : 'text-black/70'}`}>
+                                I build modern, responsive, and high-performance web applications
+                                with React, TypeScript, and TailwindCSS.
+                            </p>
+                        </div>
 
-                        <p
-                            data-aos="fade-left"
-                            className={`text-md md:text-lg max-w-xl mb-8 opacity-70 ${order ? 'text-white' : ''}`}
-                        >
-                            I build modern, responsive, and high-performance web applications
-                            with React, TypeScript, and TailwindCSS.
-                        </p>
-
-                        <div
-                            data-aos="fade-up"
-                            className="flex flex-col md:flex-row gap-4 justify-center md:justify-start"
-                        >
+                        <div data-aos="fade-up" className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
                             <Button
                                 type="button"
-                                size="lg"
+                                size="default"
                                 className="bg-blue-600 text-white cursor-pointer hover:bg-blue-700"
                                 onClick={() => ScrollTo('projects')}
                             >
@@ -61,7 +56,7 @@ export const HeroSection = () => {
                             </Button>
                             <Button
                                 type="button"
-                                size="lg"
+                                size="default"
                                 variant="outline"
                                 className="text-blue-600 border-blue-600 bg-transparent hover:bg-blue-600 hover:text-white cursor-pointer"
                                 onClick={() => ScrollTo('contact')}
