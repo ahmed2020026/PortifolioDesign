@@ -19,7 +19,7 @@ export const ProjectSection = () => {
                 {/* مشاريع */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {Projects.map((item, index) => (
-                        <div data-aos="fade-up" data-aos-delay={index * 100}>
+                        <div data-aos="fade-up" key={index} data-aos-delay={index * 100}>
                             <div key={index} className={`shadow-md duration-150 rounded-md relative overflow-hidden border border-white/20 `}>
                                 <img src={item.image} alt={item.title} className="w-full h-48" />
                                 <div className="p-5 flex flex-col justify-start h-[200px]">
