@@ -3,6 +3,7 @@ import React_Project_1 from './images/react_project_1.png'
 import React_Project_2 from './images/react_project_2.webp'
 import React_Project_3 from './images/react_project_3.png'
 import React_Project_4 from './images/react_project_4.png'
+import React_Project_5 from './images/quick_cart.png'
 
 import Bien from './images/bien.png'
 import Res from './images/res.png'
@@ -73,6 +74,13 @@ export const Skills = [
 ];
 
 export const Projects = [
+    {
+        title: "Quick Cart",
+        image: React_Project_5,
+        tech: ["React.js", "TypeScript", "TailwindCSS","Headless ui"],
+        demo: "https://quick-cart-flame-mu.vercel.app/",
+        github: "/QuickCart",
+    },
     {
         title: "React Project",
         image: React_Project_1,
