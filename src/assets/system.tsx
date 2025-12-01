@@ -4,6 +4,7 @@ import React_Project_2 from './images/react_project_2.webp'
 import React_Project_3 from './images/react_project_3.png'
 import React_Project_4 from './images/react_project_4.png'
 import React_Project_5 from './images/quick_cart.png'
+import graduation from './images/G.png'
 
 import Bien from './images/bien.png'
 import Res from './images/res.png'
@@ -136,5 +137,12 @@ export const Projects = [
         tech: ["HTML" , "CSS" , "JavaScript" , "BootStrap"],
         demo: "https://ahmed2020026.github.io/resturant/",
         github: "/resturant",
+    },
+    {
+        title: "Graduation Project",
+        image: graduation,
+        tech: ["HTML" , "CSS" , "JavaScript" , "TailwindCSS"],
+        demo: "https://embedskill.tryasp.net/",
+        github: "/aly-hamdy/ELearning_FrontEnd",
     },
 ]
