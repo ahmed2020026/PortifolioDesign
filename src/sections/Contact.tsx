@@ -82,7 +82,7 @@ export const ContactSection = () => {
                                         <Github className="text-blue-500" size={22} />
                                     </Avatar>
                                 </a>
-                                <a href="https://www.linkedin.com/in/ahmed-samir-513237251" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
+                                <a href="https://www.linkedin.com/in/a7med-samir" rel="noopener noreferrer" aria-label="LinkedIn" target="_blank">
                                     <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                         <Linkedin className="text-blue-500" size={22} />
                                     </Avatar>
