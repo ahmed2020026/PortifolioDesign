@@ -20,7 +20,7 @@ export const SkillsSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
                     {Skills.map((skill, index) => (
                         <div data-aos="fade-up" key={index} data-aos-delay={index * 100}>
-                            <div className={`flex sm:block item-center gap-5 p-6 duration-150 rounded-xl border border-white/20 shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}>
+                            <div className={`flex sm:block item-center gap-5 p-6 duration-150 rounded-xl border border-white/20 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-1 ${order ? "bg-gray-900 hover:bg-gray-800" : "bg-white hover:bg-gray-100"}`}>
                                 <div className="text-4xl sm:mb-3">
                                     {React.cloneElement(skill.icon, { 'aria-hidden': true })}
                                 </div>
