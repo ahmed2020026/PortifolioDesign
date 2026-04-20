@@ -4,6 +4,8 @@ import React_Project_2 from './images/react_project_2.webp'
 import React_Project_3 from './images/react_project_3.png'
 import React_Project_4 from './images/react_project_4.png'
 import React_Project_5 from './images/quick_cart.png'
+import React_Project_6 from './images/ho.png'
+import React_Project_7 from './images/car.png'
 import graduation from './images/G.png'
 import Burger from './images/Burger.png'
 import Portifolio_2 from './images/portifolio_2.png'
@@ -21,7 +23,6 @@ import {
     Layers,
     Atom,
     Database,
-    GitBranch,
     GitCommit,
     Github,
     Cloud,
@@ -99,6 +100,20 @@ export const Projects = [
         tech: ["React.js", "TailwindCSS", "Api", "AOS", "Material UI"],
         demo: "https://ahmed2020026.github.io/e-commerce/",
         github: "/e-commerce",
+    },
+    {
+        title: "Prescripto Hospital",
+        image: React_Project_6,
+        tech: ["React.js", "TailwindCSS", "Material UI"],
+        demo: "https://hospital-one-tau.vercel.app/",
+        github: "/hospital",
+    },
+    {
+        title: "Car Rental",
+        image: React_Project_7,
+        tech: ["React.js", "TailwindCSS", "AOS", "Headless UI"],
+        demo: "https://web-car-six.vercel.app/",
+        github: "/web-car",
     },
     {
         title: "Estate Website",
