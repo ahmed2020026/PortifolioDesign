@@ -104,14 +104,14 @@ export const Projects = [
     {
         title: "Prescripto Hospital",
         image: React_Project_6,
-        tech: ["React.js", "TailwindCSS", "Material UI"],
+        tech: ["React.js", "TailwindCSS","TypeScript", "Material UI"],
         demo: "https://hospital-one-tau.vercel.app/",
         github: "/hospital",
     },
     {
         title: "Car Rental",
         image: React_Project_7,
-        tech: ["React.js", "TailwindCSS", "AOS", "Headless UI"],
+        tech: ["React.js", "TailwindCSS","TypeScript", "AOS", "Headless UI"],
         demo: "https://web-car-six.vercel.app/",
         github: "/web-car",
     },
