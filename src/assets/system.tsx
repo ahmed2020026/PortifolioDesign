@@ -6,6 +6,7 @@ import React_Project_4 from './images/react_project_4.png'
 import React_Project_5 from './images/quick_cart.png'
 import React_Project_6 from './images/ho.png'
 import React_Project_7 from './images/car.png'
+import React_Project_8 from './images/agence.png'
 import graduation from './images/G.png'
 import Burger from './images/Burger.png'
 import Portifolio_2 from './images/portifolio_2.png'
@@ -114,6 +115,13 @@ export const Projects = [
         tech: ["React.js", "TailwindCSS","TypeScript", "AOS", "Headless UI"],
         demo: "https://web-car-six.vercel.app/",
         github: "/web-car",
+    },
+    {
+        title: "Agency-ai",
+        image: React_Project_8,
+        tech: ["React.js", "TailwindCSS","TypeScript", "AOS"],
+        demo: "https://agency-eight-sandy.vercel.app/",
+        github: "/Agency",
     },
     {
         title: "Estate Website",
