@@ -1,15 +1,13 @@
 import { Projects } from "@/assets/system";
 import { Title } from "@/components/ui/Title";
-import { getThemes } from "@/context/Mode"
 import { ExternalLink, Github } from "lucide-react";
 
 
 export const ProjectSection = () => {
-    const { order } = getThemes()!
     return (
         <section
             id="projects"
-            className={`flex justify-center items-center py-20 px-4 ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}
+            className={`flex section justify-center items-center py-20 px-4 dark:bg-gray-900 dark:text-white bg-gray-50 text-gray-800`}
         >
             <div className="container">
                 <div data-aos="fade-down" className="text-center">
@@ -27,7 +25,7 @@ export const ProjectSection = () => {
                                         <h3 className="text-xl text-start font-semibold mb-2">{item.title}</h3>
                                         <div className="flex flex-wrap justify-start gap-2 mb-4">
                                             {item.tech.map((t, idx) => (
-                                                <span key={idx} className={`px-3 py-1 text-xs rounded-full ${order ? "bg-gray-800 text-gray-400" : "bg-gray-200 text-gray-800"}`}>
+                                                <span key={idx} className={`px-3 py-1 text-xs rounded-full dark:bg-gray-800 dark:text-gray-400 bg-gray-200 text-gray-800`}>
                                                     {t}
                                                 </span>
                                             ))}
@@ -47,7 +45,7 @@ export const ProjectSection = () => {
                                             href={`https://github.com/ahmed2020026${item.github}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`flex items-center gap-1 px-2 py-1 border rounded-lg ${order ? 'text-gray-600 border-gray-600' : 'text-gray-500 border-gray-500'}`}
+                                            className={`flex items-center gap-1 px-2 py-1 border rounded-lg dark:text-gray-600 dark:border-gray-600 text-gray-500 border-gray-500`}
                                         >
                                             <Github size={18} aria-hidden='true' /> github
                                         </a>

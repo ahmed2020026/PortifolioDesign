@@ -10,7 +10,6 @@ import { Title } from "@/components/ui/Title";
 import { Spinner } from "@/components/ui/Spinner";
 
 export const ContactSection = () => {
-    const { order } = getThemes()!;
     const [loading, setLoading] = useState(false);
     const Data = useRef<HTMLFormElement>(null);
 
@@ -54,8 +53,8 @@ export const ContactSection = () => {
     };
 
     return (
-        <section id="contact" className={`py-20 px-6 flex justify-center items-center ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`}>
-            <div className="container">
+        <section id="contact" className={`py-20 px-6 flex justify-center items-center dark:bg-gray-900 dark:text-white bg-gray-50 text-gray-800`}>
+            <div className="container overflow-hidden">
 
                 {/* Header */}
                 <Title title="Contact Me" subTitle="Feel free to reach out anytime — I’d love to hear from you!" />
@@ -67,7 +66,7 @@ export const ContactSection = () => {
 
                         {/* Gmail */}
                         <div data-aos="fade-right">
-                            <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700 text-gray-200" : "bg-gray-100 border-gray-200 text-gray-800"}`}>
+                            <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 bg-gray-100 border-gray-200 text-gray-800`}>
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Mail className="text-blue-500" size={22} />
                                 </Avatar>
@@ -82,7 +81,7 @@ export const ContactSection = () => {
 
                         {/* Phone */}
                         <div data-aos="fade-right" data-aos-delay="100">
-                            <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700 text-gray-200" : "bg-gray-100 border-gray-200 text-gray-800"}`}>
+                            <div className={`flex items-center gap-3 px-3 py-2 rounded-xl shadow border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200 bg-gray-100 border-gray-200 text-gray-800`}>
                                 <Avatar className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500/10">
                                     <Phone className="text-blue-500" size={22} />
                                 </Avatar>
@@ -119,7 +118,7 @@ export const ContactSection = () => {
 
                     {/* Form */}
                     <div data-aos="fade-left" className="lg:col-span-2">
-                        <div className={`p-6 rounded-xl shadow border ${order ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}>
+                        <div className={`p-6 rounded-xl shadow border dark:bg-gray-800 dark:border-gray-700 bg-white border-gray-200`}>
 
                             <form ref={Data} onSubmit={Submit} className="flex flex-col gap-4">
 
@@ -164,4 +163,4 @@ export const ContactSection = () => {
             </div>
         </section>
     );
-};
+}

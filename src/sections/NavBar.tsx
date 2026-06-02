@@ -1,72 +1,82 @@
 import { NavLinks } from "@/assets/system";
 import { Button } from "@/components/ui/button";
-import { getThemes } from "@/context/Mode";
-import { GetHeight } from "@/hooks/useHeight";
 import { ScrollTo } from "@/hooks/useScroll";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-export const Navbar = () => {
-    const { order, setOrder } = getThemes()!
+export const Navbar = ({ setThemes }: { setThemes: () => void }) => {
     const Ref = useRef<HTMLDivElement>(null);
 
     /* getHeigh From Custom Hook */
-    const h: number = GetHeight(Ref as React.RefObject<HTMLElement>)
 
     /* States */
     const [open, setOpen] = useState<boolean>(false)
-    //const [themes, setThemes] = useState<boolean>(false)
 
     /* Change Status Menu */
     const toggle = () => {
         setOpen(!open)
     }
-
-    /* Change Themes */
-    const Themes = () => {
-        setOrder(!order)
-    }
-
-
     return (
-        <div className={`container rounded-lg shadow ${order ? 'bg-gray-950' : 'bg-white'}  relative`}>
+        <div className={`container rounded-lg shadow dark:bg-gray-950 bg-white relative`}>
             <div className="flex items-center justify-between">
                 <div className="flex items-start gap-2">
-                    <h1 className={`font-bold text-2xl ${order ? 'text-gray-50' : 'text-gray-950'}`}>A.<span className="text-blue-600">SAMIR</span></h1>
+                    <h1 className={`font-bold text-2xl dark:text-gray-50 text-gray-950`}>A.<span className="text-blue-600">SAMIR</span></h1>
                     {/* menu in large Screen */}
                     <nav className="hidden md:block" >
                         {
                             NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} style={{ transition: 'all 150ms' }} variant="ghost" className={`cursor-pointer bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
+                                <Button key={index} style={{ transition: 'all 150ms' }} variant="ghost" className={`cursor-pointer bg-transparent dark:text-stone-400 dark:hover:text-blue-600 dark:hover:bg-gray-900 text-stone-600 hover:text-blue-600`} onClick={() => ScrollTo(item.rots)}>
                                     {item.link}
                                 </Button>
                             ))
                         }
                     </nav>
                     {/* menu in small Screen */}
-                    <nav className={`md:hidden absolute top-[103%] w-full p-2 left-0  shadow rounded-md ${order ? 'bg-gray-950' : 'bg-white'}`} ref={Ref} style={{
-                        height: ` ${open ? h : 0}px`,
-                        opacity: `${open ? 1 : 0}`,
-                        overflow: "hidden",
-                        transition: "height 0.25s ease, opacity 0.33s ease, background-color 150ms ease",
-                    }}>
-                        {
-                            NavLinks.map((item: Record<string, string>, index: number) => (
-                                <Button key={index} style={{transition:'all 150ms'}} variant="ghost" className={`cursor-pointer text-left block w-full bg-transparent  ${order ? 'text-stone-400 hover:text-blue-600 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} onClick={() => ScrollTo(item.rots)}>
-                                    {item.link}
-                                </Button>
-                            ))
-                        }
-                    </nav>
+                    <nav
+    className={`
+        md:hidden
+        z-50
+        absolute
+        top-[105%]
+        left-0
+        w-full
+        p-2
+        shadow
+        rounded-md
+        bg-white
+        dark:bg-gray-950
+        transition-transform
+        duration-400
+        ${
+            open
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6 pointer-events-none"
+        }
+    `}
+>
+    {NavLinks.map((item: Record<string, string>, index: number) => (
+        <Button
+            key={index}
+            variant="ghost"
+            className="cursor-pointer text-left block w-full bg-transparent dark:text-stone-400 dark:hover:text-blue-600 dark:hover:bg-gray-900 text-stone-600 hover:text-blue-600"
+            onClick={() => {
+                ScrollTo(item.rots);
+                setOpen(false);
+            }}
+        >
+            {item.link}
+        </Button>
+    ))}
+</nav>
                 </div>
                 <div className="icons">
-                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer md:hidden bg-transparent  ${order ? 'text-stone-200 hover:text-stone-200 hover:bg-gray-900' : 'text-stone-600 hover:text-blue-600'}`} aria-label="btn_menu" onClick={toggle}>
+                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer md:hidden bg-transparent dark:text-stone-200 dark:hover:text-stone-200 dark:hover:bg-gray-900 text-stone-600 hover:text-blue-600`} aria-label="btn_menu" onClick={toggle}>
                         <Menu className={open ? 'hidden' : ''} />
                         <X className={!open ? 'hidden' : ''} />
                     </Button>
-                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer bg-transparent  ${order ? 'text-stone-200 hover:text-blue-500 hover:bg-gray-900' : 'text-stone-800 hover:text-blue-600'}`} aria-label="Themes" onClick={Themes}>
-                        <Moon className={order ? 'hidden' : ''} />
-                        <Sun className={!order ? 'hidden' : ''} />
+                    <Button variant="ghost" style={{ transition: 'all 150ms' }} className={`cursor-pointer bg-transparent dark:text-stone-200 dark:hover:text-blue-500 dark:hover:bg-gray-900 text-stone-800 hover:text-blue-600`} aria-label="Themes" onClick={setThemes}>
+                        <Moon className='dark:hidden' />
+                        <Sun className='hidden dark:block' />
                     </Button>
                 </div>
             </div>

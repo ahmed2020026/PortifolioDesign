@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Title } from "@/components/ui/Title"
-import { getThemes } from "@/context/Mode"
 
 export const About = () => {
-    const { order } = getThemes()!
     return (
-        <section id="about" className={`flex justify-center items-center py-20 px-4 ${order ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-800"}`} >
+        <section id="about" className={`flex section justify-center items-center py-20 px-4 dark:bg-gray-900 dark:text-white bg-gray-50 text-gray-800`} >
             <div className="container text-center max-w-3xl">
 
                 <div data-aos="fade-down">
@@ -13,7 +11,7 @@ export const About = () => {
                 </div>
 
                 <div data-aos="fade-up">
-                    <div className={`text-base leading-relaxed tracking-wide duration-150 ${order ? "text-gray-300/80" : "text-gray-700/80"}`}>
+                    <div className={`text-base leading-relaxed tracking-wide duration-150 dark:text-gray-300/80 text-gray-700/80`}>
                         <p className="mb-4 ">
                             Hi! I’m Ahmed Samir, a passionate Front-End Developer who loves creating
                             modern, responsive, and user-friendly web interfaces.
