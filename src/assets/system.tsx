@@ -84,7 +84,7 @@ export const Projects = [
     {
         title: "DashBoard Website",
         image: React_Project_4,
-        tech: ["React.js", "TailwindCSS", "Redux Toolkit", "Material UI", "Api"],
+        tech: ["React.js", "TailwindCSS", "Api", "Redux Toolkit", "Material UI"],
         demo: "http://g-store-dashboard.vercel.app/",
         github: "/Dashboard",
     },
